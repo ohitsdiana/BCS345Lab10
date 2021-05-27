@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="421.0" prefWidth="492.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab10gui.Lab10GUIController">
+   <children>
+      <TabPane layoutY="12.0" prefHeight="409.0" prefWidth="492.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Sandwich Cart">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="197.0" prefWidth="247.0">
+                     <children>
+                        <Label layoutX="25.0" layoutY="21.0" text="First Name:" />
+                        <Label layoutX="25.0" layoutY="56.0" text="Last Name:" />
+                        <TextField fx:id="label_fn" layoutX="94.0" layoutY="17.0" />
+                        <TextField fx:id="label_ln" layoutX="94.0" layoutY="52.0" />
+                        <RadioButton fx:id="rb_delivery" layoutX="25.0" layoutY="99.0" mnemonicParsing="false" text="Delivery">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="serviceOption" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="rb_pickUp" layoutX="143.0" layoutY="99.0" mnemonicParsing="false" text="Pick Up" toggleGroup="$serviceOption" />
+                        <Button fx:id="btn_submit" layoutX="57.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleSubmitButton" prefHeight="25.0" prefWidth="125.0" text="Submit Order" />
+                        <VBox layoutX="255.0" layoutY="16.0" prefHeight="161.0" prefWidth="223.0" spacing="25.0">
+                           <children>
+                              <CheckBox fx:id="ck1" mnemonicParsing="false" text=" Philly Steak     $12.50" />
+                              <CheckBox fx:id="ck2" mnemonicParsing="false" text="Chicken           $11.50" />
+                              <CheckBox fx:id="ck3" mnemonicParsing="false" text="Tuna                $13.00" />
+                              <CheckBox fx:id="ck4" mnemonicParsing="false" text="Cheese              $8.75" />
+                           </children>
+                           <padding>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </padding>
+                        </VBox>
+                        <Separator layoutX="-1.0" layoutY="189.0" prefHeight="5.0" prefWidth="507.0" />
+                        <Label fx:id="outputLabel" layoutX="14.0" layoutY="199.0" prefHeight="172.0" prefWidth="464.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Image View">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fx:id="imageView" fitHeight="227.0" fitWidth="447.0" layoutX="96.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@volcano.jpg" />
+                           </image>
+                        </ImageView>
+                        <RadioButton fx:id="rb_volcano" layoutX="96.0" layoutY="263.0" mnemonicParsing="false" onAction="#rb_volcano_Listener" selected="true" text="Volcano">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="imageGroup" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="rb_accident" layoutX="358.0" layoutY="263.0" mnemonicParsing="false" onAction="#rb_accident_Listener" text="Accident" toggleGroup="$imageGroup" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
